@@ -34,6 +34,3 @@ function upload_space_check_disabled()
 {
 	return 1;
 }
-
-
-register_activation_hook(__FILE__, 'update_create_option');

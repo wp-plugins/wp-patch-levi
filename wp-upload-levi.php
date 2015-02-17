@@ -65,6 +65,8 @@ if (!is_multisite())
 	add_filter('pre_site_option_upload_space_check_disabled', 'upload_space_check_disabled');
 	add_action('admin_init', 'register_upload_fields');
 	add_action('admin_menu', array($upload, 'addMenu'));
+	
+	register_activation_hook(__FILE__, 'update_create_option');
 } 
 else 
 {
