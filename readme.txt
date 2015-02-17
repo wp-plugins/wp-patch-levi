@@ -4,7 +4,7 @@ Donate link:
 Tags: upload, attachment, plupload, big file
 Requires at least: 3.1.0
 Tested up to: 4.1
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,8 +22,6 @@ http://levi.cg.am/archives/4603
 * bug修复：修正wordpress文章附件统计不正确，详细见：http://levi.cg.am/archives/3849 ；
 * 功能增强：使用新的HTML5技术切割大文件，让wordpress能够接受上传GB级的文件；
 
-> 建议，安装插件后，手动拷贝插件目录`/wp-content/plugins/wp-patch-levi`下所有文件至目录`/wp-content/mu-plugins`下
-
 == Screenshots ==
 
 1. wordpress补丁列表
@@ -36,14 +34,19 @@ http://levi.cg.am/archives/4603
 2. 点击安装插件，等待wordpress在线安装完毕
 3. 在插件管理中启动插件
 
-> 建议，安装插件后，手动拷贝插件目录`/wp-content/plugins/wp-patch-levi`下所有文件至目录`/wp-content/mu-plugins`下
-
 离线安装方法：
 
 1. 下载离线插件包并解压
-2. 复制目录到`/wp-content/mu-plugins`下
+2. 复制目录到`/wp-content/plugins`下
+3. 在插件管理中启动插件
 
 == Changelog ==
+
+= 0.1.3 =
+* BUG修复：服务器上传的暂存目录路径不正确；
+
+= 0.1.2 =
+* BUG修复：启动插件后，初始数据没有添加；
 
 = 0.1.1 =
 * BUG修复：更新上传配置后，保存的数据类型错误；
@@ -54,6 +57,12 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.1.3 =
+* 文件暂存路径修复；
+
+= 0.1.2 =
+* 初始错误修复；
 
 = 0.1.1 =
 * 错误修复；

@@ -245,7 +245,7 @@ class AsyUpload
 		{
 			if (is_dir($temp) && is_writable($temp))
 			{
-				return $temp;
+				return '/'.trim($temp, '/').'/';
 			}
 		}
 		
