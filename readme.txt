@@ -4,7 +4,7 @@ Donate link:
 Tags: upload, attachment, plupload, big file
 Requires at least: 3.1.0
 Tested up to: 4.1
-Stable tag: 0.1
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,11 +45,18 @@ http://levi.cg.am/archives/4603
 
 == Changelog ==
 
+= 0.1.1 =
+* BUG修复：更新上传配置后，保存的数据类型错误；
+* BUG修复：配置模板未调用配置数据；
+
 = 0.1 =
 * 新增文章附件统计补丁；
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.1.1 =
+* 错误修复；
 
 = 0.1 =
 * 补丁包发布上线；
@@ -57,9 +64,13 @@ http://levi.cg.am/archives/4603
 == Frequently Asked Questions ==
 
 问：补丁包安装后如何设置使用
+
 答：补丁包启用后无需设置即可使用
 
+——————
+
 问：补丁包和wordpress其他插件有什么不一样吗
+
 答：补丁包是对wordpress现有功能进行完善及问题修复，不额外增加第三方应用，属于“纯天然绿色插件”
 
 == Filters ==
@@ -81,3 +92,8 @@ http://levi.cg.am/archives/4603
 * check_admin_referer：截获异步上传，进行处理
 * check_ajax_referer：截获ajax异步上传，进行处理
 * wp_handle_levi_upload_prefilter：这里很关键，需要配合 `'action' => 'wp_handle_levi_upload'` 一起看
+
+检查配置中允许的文件格式
+
+* pre_update_option_upload_filetypes：对应单一博客
+* pre_update_site_option_upload_filetypes：对应多博客站点

@@ -10,12 +10,12 @@ class Yii_bloger_upload
 		$this->_max_size = is_numeric($maxk) ? $maxk : get_site_option('fileupload_maxk', 1500);
 	}
 	
-	public function setOption($value, $old_value) 
+	public function setOption($value) 
 	{
 		$type = explode('|', implode('|', array_keys(wp_get_mime_types())));
 		$value = explode(' ', $value);
 		
-		return array_diff($value, $type) ? $old_value : $value;
+		return implode(' ', array_intersect($value, $type));
 	}
 	
 	public function media_upload_image()

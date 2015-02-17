@@ -6,15 +6,15 @@ function register_upload_fields()
 	add_settings_field('upload_filetypes', '上传文件类型', 'fields_upload_html', 'general', 'upload_fields_group', array('id' => 'upload_filetypes'));
 	add_settings_field('fileupload_maxk', '最大上传文件的大小', 'fields_upload_html', 'general', 'upload_fields_group', array('id' => 'fileupload_maxk'));
 
-	register_setting('general', 'upload_space_check_disabled');
-	register_setting('general', 'blog_upload_space');
+// 	register_setting('general', 'upload_space_check_disabled');
+// 	register_setting('general', 'blog_upload_space');
 	register_setting('general', 'upload_filetypes');
 	register_setting('general', 'fileupload_maxk');
 }
 
 function upload_fields_group_tmp()
 {
-	echo '<p>following is our settings section</p>';
+	echo '<p>请根据当前博客需求，设置上传文件配置信息</p>';
 }
 
 function fields_upload_html($arg)

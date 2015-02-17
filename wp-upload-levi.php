@@ -3,7 +3,7 @@
  * Plugin Name: wordpress 补丁包
  * Plugin URI: http://levi.cg.am
  * Description: 第三方wordpress补丁包，修复wordpress漏洞、程序缺陷
- * Version: 0.1
+ * Version: 0.1.1
  * Network: true
  * Author: Levi
  * Author URI: http://levi.cg.am
@@ -15,7 +15,6 @@ include 'upload/Yii_bloger_upload.php';
 include 'upload/async-upload.php';
 
 define('WP_UPLOAD_LEVI', true);
-
 /*
  * 文章附件统计
  */
@@ -44,9 +43,6 @@ add_action('admin_print_scripts-media-upload-popup', array($upload, 'load_js'));
 add_action('admin_print_scripts-media-new.php', array($upload, 'load_js'));
 add_action('post-upload-ui', array($upload, 'post_upload_ui'));
 
-add_filter('pre_update_option_upload_filetypes', array($upload, 'setOption'), 10, 2);
-add_filter('pre_update_site_option_upload_filetypes', array($upload, 'setOption'), 10, 2);
-
 // 上传处理
 $async = new AsyUpload();
 
@@ -57,6 +53,9 @@ add_action('check_ajax_referer', array($async, 'checkAjaxRefererUpload'));
 add_filter('wp_handle_levi_upload_prefilter', array($async, 'uploadToTmp'), 1);
 add_filter('wp_handle_levi_upload_prefilter', 'check_upload_size');
 
+// 检查上传文件的格式
+add_filter('pre_update_option_upload_filetypes', array($upload, 'setOption'));
+add_filter('pre_update_site_option_upload_filetypes', array($upload, 'setOption'));
 
 // 如果没有开启多博客网站需要添加配置
 if (!is_multisite()) 
