@@ -3,7 +3,7 @@
  * Plugin Name: wordpress 补丁包
  * Plugin URI: http://levi.cg.am
  * Description: 第三方wordpress补丁包，修复wordpress漏洞、程序缺陷
- * Version: 0.1.3
+ * Version: 0.1.4
  * Network: true
  * Author: Levi
  * Author URI: http://levi.cg.am
@@ -50,8 +50,8 @@ add_action('admin_init', array($async, 'setUploadHeader'));
 add_action('check_admin_referer', array($async, 'checkAdminRefererUpload'));
 add_action('check_ajax_referer', array($async, 'checkAjaxRefererUpload'));
 
+// 分割文件进行上传处理
 add_filter('wp_handle_levi_upload_prefilter', array($async, 'uploadToTmp'), 1);
-add_filter('wp_handle_levi_upload_prefilter', 'check_upload_size');
 
 // 检查上传文件的格式
 add_filter('pre_update_option_upload_filetypes', array($upload, 'setOption'));
@@ -70,5 +70,7 @@ if (!is_multisite())
 } 
 else 
 {
+	// check_upload_size : 单一的博客是没有这个函数的 @Todo: 需要一个检查文件大小的函数
+	add_filter('wp_handle_levi_upload_prefilter', 'check_upload_size');
 	add_action('network_admin_menu', array($upload, 'addSiteMenu'));
 }

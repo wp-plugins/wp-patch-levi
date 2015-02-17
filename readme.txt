@@ -4,7 +4,7 @@ Donate link:
 Tags: upload, attachment, plupload, big file
 Requires at least: 3.1.0
 Tested up to: 4.1
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ http://levi.cg.am/archives/4603
 
 == Changelog ==
 
+= 0.1.4 =
+* BUG修复：修复一处Hook，单一的博客不存在的系统函数调用；
+
 = 0.1.3 =
 * BUG修复：服务器上传的暂存目录路径不正确；
 
@@ -57,6 +60,9 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.1.4 =
+* 单一博客hook修复；
 
 = 0.1.3 =
 * 文件暂存路径修复；
