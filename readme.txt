@@ -1,0 +1,83 @@
+=== wp-patch-levi ===
+Contributors: cgfeel
+Donate link: 
+Tags: upload, attachment, plupload, big file
+Requires at least: 3.1.0
+Tested up to: 4.1
+Stable tag: 0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+wordpress第三方补丁包，修复wordpress程序功能中的不足和缺陷
+
+== Description ==
+
+**插件支持平台：**
+http://levi.cg.am/archives/4603
+
+有什么问题以及意见请在这里提出来，会根据请款做出修正
+
+目前提供两个补丁
+
+* bug修复：修正wordpress文章附件统计不正确，详细见：http://levi.cg.am/archives/3849 ；
+* 功能增强：使用新的HTML5技术切割大文件，让wordpress能够接受上传GB级的文件；
+
+> 建议，安装插件后，手动拷贝插件目录`/wp-content/plugins/wp-patch-levi`下所有文件至目录`/wp-content/mu-plugins`下
+
+== Screenshots ==
+
+1. wordpress补丁列表
+
+== Installation ==
+
+在线安装方法：
+
+1. 点击“安装插件”搜索`wp-patch`即可找到插件
+2. 点击安装插件，等待wordpress在线安装完毕
+3. 在插件管理中启动插件
+
+> 建议，安装插件后，手动拷贝插件目录`/wp-content/plugins/wp-patch-levi`下所有文件至目录`/wp-content/mu-plugins`下
+
+离线安装方法：
+
+1. 下载离线插件包并解压
+2. 复制目录到`/wp-content/mu-plugins`下
+
+== Changelog ==
+
+= 0.1 =
+* 新增文章附件统计补丁；
+* 新增wordpress上传大文件功能；
+
+== Upgrade Notice ==
+
+= 0.1 =
+* 补丁包发布上线；
+
+== Frequently Asked Questions ==
+
+问：补丁包安装后如何设置使用
+答：补丁包启用后无需设置即可使用
+
+问：补丁包和wordpress其他插件有什么不一样吗
+答：补丁包是对wordpress现有功能进行完善及问题修复，不额外增加第三方应用，属于“纯天然绿色插件”
+
+== Filters ==
+
+文件中使用的钩子(hook)比较多，这里列举一部分
+
+附件统计：
+
+* save_post：主要用于记录每次新增和修改文章时添加的附件
+
+大文件上传配置信息：
+
+* plupload_init
+* plupload_default_param
+* plupload_default_settings
+
+大文件上传处理
+
+* check_admin_referer：截获异步上传，进行处理
+* check_ajax_referer：截获ajax异步上传，进行处理
+* wp_handle_levi_upload_prefilter：这里很关键，需要配合 `'action' => 'wp_handle_levi_upload'` 一起看
