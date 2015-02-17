@@ -1,0 +1,13 @@
+<?php
+$id = isset($arg['id']) ? $arg['id'] : '';
+switch ($id) 
+{		
+	case 'upload_filetypes':
+		echo '<input name="upload_filetypes" type="text" id="upload_filetypes" class="large-text" value="jpg jpeg png gif mp3 mov avi wmv midi mid pdf zip" size="45" />';
+		break;
+		
+	case 'fileupload_maxk':
+		echo '<input name="fileupload_maxk" type="number" min="0" style="width: 100px" id="fileupload_maxk" value="1048577" /> KB';
+		break;
+}
+?>

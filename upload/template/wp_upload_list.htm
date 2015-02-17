@@ -1,0 +1,37 @@
+<?php
+$set = is_multisite() ? admin_url('/network/settings.php#upload_space_check_disabled') : admin_url('options-general.php#upload_filetypes');
+?><style>
+.widefat .action {
+	text-align: center;
+}
+
+.widefat td {
+	padding: 12px 10px;
+}
+</style>
+<div class="wrap">
+	<h2>附件补丁列表</h2>
+	<table class="wp-list-table widefat fixed posts">
+	    <thead>
+	        <tr>
+		        <th width="15%">名称</th>
+		        <th class="action">简介</th>
+		        <th width="15%" class="action">操作</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr class="type-post status-draft hentry alternate">
+	            <td>附件修复</td>
+	            <td>修正wordpress统计文章中附件数量不正确，<a href="http://levi.cg.am/archives/3849" target="_blank">点击查看详细说明 &gt;</a></td>
+	            <td class="action">--</td>
+	        </tr>
+	        <tr class="type-post status-draft hentry">
+	            <td>大文件上传</td>
+	            <td>使用文件切割续传的方式，无需服务器支持，即可轻松上传GB级大小的文件，<a href="http://levi.cg.am/archives/3849" target="_blank">点击查看详细说明 &gt;</a></td>
+	            <td class="action">
+	               <a href="<?php echo $set; ?>">前去设置附件上传 &gt;</a>
+	           </td>
+	        </tr>
+	    </tbody>
+	</table>
+</div>
