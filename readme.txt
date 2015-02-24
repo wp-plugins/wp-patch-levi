@@ -1,10 +1,10 @@
 === wp-patch-levi ===
 Contributors: cgfeel
 Donate link: 
-Tags: upload, attachment, plupload, big file
+Tags: upload, attachment, plupload, big file, google fonts, gravater
 Requires at least: 3.1.0
-Tested up to: 4.1
-Stable tag: 0.1.4
+Tested up to: 4.1.1
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,14 +17,19 @@ http://levi.cg.am/archives/4603
 
 有什么问题以及意见请在这里提出来，会根据请款做出修正
 
-目前提供两个补丁
+网站速度补丁包：
 
-* bug修复：修正wordpress文章附件统计不正确，详细见：http://levi.cg.am/archives/3849 ；
-* 功能增强：使用新的HTML5技术切割大文件，让wordpress能够接受上传GB级的文件；
+* google字体：使用360开源CDN替换google CDN，对所有主题、插件、页面均可通用匹配、替换；详细见：http://levi.cg.am/archives/4609
+* gravater头像：替换gravater头像URL为https，解决在中国地区无法查看头像图片的问题；
+
+博客附件补丁包：
+
+* 附件修复：修正wordpress文章附件统计不正确，详细见：http://levi.cg.am/archives/3849
+* 大文件上传：使用新的HTML5技术切割大文件，让wordpress能够接受上传GB级的文件，详细见：http://levi.cg.am/archives/4603
 
 == Screenshots ==
 
-1. wordpress补丁列表
+1. 补丁包列表
 
 == Installation ==
 
@@ -41,6 +46,10 @@ http://levi.cg.am/archives/4603
 3. 在插件管理中启动插件
 
 == Changelog ==
+
+= 0.2.1 =
+* 新增补丁：解决google字体在中国地区无法正常使用的问题（通用解决方案）；
+* 新增补丁：解决gravater头像在中国地区无法正常使用的问题；
 
 = 0.1.4 =
 * BUG修复：修复一处Hook，单一的博客不存在的系统函数调用；
@@ -60,6 +69,9 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.2.1 =
+* 增加网站打开速度补丁包；
 
 = 0.1.4 =
 * 单一博客hook修复；
@@ -92,9 +104,23 @@ http://levi.cg.am/archives/4603
 
 文件中使用的钩子(hook)比较多，这里列举一部分
 
-附件统计：
+### google字体
+
+通过ob函数，检查输出的内容，替换google字体连接，能够通用匹配所有主题样式
+
+* 后台钩子：admin_enqueue_scripts、admin_head
+* 后台登录钩子：wp_admin_css、login_head
+* 前台钩子：wp_head
+
+### gravater头像
+
+* get_avatar
+
+### 附件统计：
 
 * save_post：主要用于记录每次新增和修改文章时添加的附件
+
+### 大文件上传：
 
 大文件上传配置信息：
 
