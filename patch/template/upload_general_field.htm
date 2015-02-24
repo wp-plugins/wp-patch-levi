@@ -1,0 +1,13 @@
+<?php
+$id = isset($arg['id']) ? $arg['id'] : '';
+switch ($id) 
+{		
+	case 'upload_filetypes':
+		printf('<input name="upload_filetypes" type="text" id="upload_filetypes" class="large-text" value="%s" size="45" />', get_option('upload_filetypes'));
+		break;
+		
+	case 'fileupload_maxk':
+		printf('<input name="fileupload_maxk" type="number" min="0" style="width: 100px" id="fileupload_maxk" value="%s" /> KB', get_option('fileupload_maxk'));
+		break;
+}
+?>

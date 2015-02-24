@@ -1,0 +1,52 @@
+<?php
+$set = is_multisite() ? admin_url('/network/settings.php#upload_space_check_disabled') : admin_url('options-general.php#upload_filetypes');
+?><style>
+.widefat .action {
+	text-align: center;
+}
+
+.widefat td {
+	padding: 12px 10px;
+	vertical-align: middle;
+	border-bottom: 1px solid #e2e2e2;
+}
+</style>
+<div class="wrap">
+	<h2>补丁包列表</h2>
+	<table class="wp-list-table widefat fixed posts">
+	    <thead>
+	        <tr>
+                <th width="72">分类</th>
+                <th width="10%">名称</th>
+		        <th class="action">简介</th>
+		        <th width="72" class="action">操作</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+            <tr class="type-post status-draft hentry alternate">
+                <td rowspan="2" align="center">网站速度</td>
+                <td>google字体</td>
+                <td>使用360开源CDN替换google CDN，对所有主题、插件、页面均可通用匹配、替换；<a href="http://levi.cg.am/archives/4609" target="_blank">点击查看详情 &gt;</a></td>
+                <td class="action">--</td>
+            </tr>
+            <tr class="type-post status-draft hentry">
+                <td>gravater头像</td>
+                <td>替换gravater头像URL为https，解决在中国地区无法查看头像图片的问题</td>
+                <td class="action">--</td>
+            </tr>
+            <tr class="type-post status-draft hentry alternate">
+                <td rowspan="2" align="center">博客附件</td>
+                <td>附件修复</td>
+                <td>修正wordpress统计文章中附件数量不正确，<a href="http://levi.cg.am/archives/3849" target="_blank">点击查看详情 &gt;</a></td>
+                <td class="action">--</td>
+            </tr>
+	        <tr class="type-post status-draft hentry">
+	            <td>大文件上传</td>
+	            <td>使用文件切割续传的方式，无需服务器支持，即可轻松上传GB级大小的文件，<a href="http://levi.cg.am/archives/4603" target="_blank">点击查看详情 &gt;</a></td>
+	            <td class="action">
+	               <a href="<?php echo $set; ?>">前去设置 &gt;</a>
+	           </td>
+	        </tr>
+	    </tbody>
+	</table>
+</div>
