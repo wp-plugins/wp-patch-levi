@@ -239,7 +239,9 @@ class AsyUpload
 		$dir = defined('WP_TEMP_DIR') ? array(WP_TEMP_DIR) : array();
 		function_exists('sys_get_temp_dir') && $dir[] = sys_get_temp_dir();
 		
-		$upload_dir = wp_upload_dir()['basedir'];
+		$wp_dir = wp_upload_dir();
+		$upload_dir = $wp_dir['basedir'];
+		
 		$dir += array(ini_get('upload_tmp_dir'), '/tmp/', $upload_dir.'/wpl_temp/');
 		foreach ($dir as $temp)
 		{

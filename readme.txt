@@ -2,9 +2,9 @@
 Contributors: cgfeel
 Donate link: 
 Tags: upload, attachment, plupload, big file, google fonts, gravater
-Requires at least: 3.1.0
+Requires at least: 4.0.0
 Tested up to: 4.1.1
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,9 @@ wordpress第三方补丁包，修复wordpress程序功能中的不足和缺陷
 http://levi.cg.am/archives/4603
 
 有什么问题以及意见请在这里提出来，会根据请款做出修正
+
+> 注：本人一直秉承着PHP新特性、新语法，这样可能会造成插件在一些老的PHP环境中执行错误；比如PHP 5.3，如果您执行出现错误，请您将错误提示反馈给我，我会做出调整。
+> 如果你的PHP版本比PHP5.3还要低，那可能就不在我支持范围之内了，因为这样您可能连wordpress都有点难跑动，建议升级PHP环境。
 
 网站速度补丁包：
 
@@ -47,6 +50,12 @@ http://levi.cg.am/archives/4603
 
 == Changelog ==
 
+= 0.2.2 =
+* 向下兼容，修正一处错误；
+* 修正一处描述错误，当前补丁不支持wordpress 3.*及以下的版本；
+
+> 做一个简短说明，由于在wordpress 4.0.0的时候上传的hook才开始支持动态名称，所以在此之前版本的wordpress请先升级。
+
 = 0.2.1 =
 * 新增补丁：解决google字体在中国地区无法正常使用的问题（通用解决方案）；
 * 新增补丁：解决gravater头像在中国地区无法正常使用的问题；
@@ -69,6 +78,9 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.2.2 =
+* 调整一处错误，向下兼容；
 
 = 0.2.1 =
 * 增加网站打开速度补丁包；
