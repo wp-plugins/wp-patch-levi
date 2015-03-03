@@ -168,7 +168,7 @@ class AsyUpload
 	public function uploadToTmp($file)
 	{	
 		$fileName = isset($_REQUEST['name']) ? $_REQUEST['name'] : (isset($file['name']) ? $file['name'] : uniqid('file_'));
-		$targetDir = $this->_prepare_tmpdir();
+		$targetDir = get_temp_dir();
 		$filePath = $targetDir.$fileName;
 		
 		// Chunking might be enabled
@@ -232,34 +232,6 @@ class AsyUpload
 			$file['error'] = array('msg' => $e->getMessage(), 'code' => $e->getCode());
 			return $file;
 		}
-	}
-	
-	private function _prepare_tmpdir()
-	{
-		$dir = defined('WP_TEMP_DIR') ? array(WP_TEMP_DIR) : array();
-		function_exists('sys_get_temp_dir') && $dir[] = sys_get_temp_dir();
-		
-		$wp_dir = wp_upload_dir();
-		$upload_dir = $wp_dir['basedir'];
-		
-		$dir += array(ini_get('upload_tmp_dir'), '/tmp/', $upload_dir.'/wpl_temp/');
-		foreach ($dir as $temp)
-		{
-			if (is_dir($temp) && is_writable($temp))
-			{
-				return '/'.trim($temp, '/').'/';
-			}
-		}
-		
-		if (is_dir($upload_dir) && is_writable($upload_dir)) 
-		{
-			if (mkdir($upload_dir.'/wpl_temp/'))
-			{
-				return $upload_dir.'/wpl_temp/';
-			}
-		}
-		
-		return false;
 	}
 	
 	private function _cleanTargetDir($targetDir, $filePath)

@@ -4,7 +4,7 @@ Donate link:
 Tags: upload, attachment, plupload, big file, google fonts, gravater
 Requires at least: 4.0.0
 Tested up to: 4.1.1
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,9 @@ http://levi.cg.am/archives/4603
 
 == Changelog ==
 
+= 0.2.3 =
+* 简化代码，获取系统临时目录代码采用wordpress自带函数；
+
 = 0.2.2 =
 * 向下兼容，修正一处错误；
 * 修正一处描述错误，当前补丁不支持wordpress 3.*及以下的版本；
@@ -78,6 +81,9 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.2.3 =
+* 简化代码；
 
 = 0.2.2 =
 * 调整一处错误，向下兼容；
