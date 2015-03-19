@@ -18,7 +18,7 @@ class AsyUpload
 	
 	public function setUploadHeader()
 	{
-		if (rtrim($_SERVER['PHP_SELF'], '/wp-admin/async-upload.php') != $_SERVER['PHP_SELF'])
+		if (strrchr($_SERVER['PHP_SELF'], '/wp-admin/async-upload.php'))
 		{
 			set_time_limit(5 * 60);
 			header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -35,7 +35,7 @@ class AsyUpload
 	 */
 	public function checkAdminRefererUpload($action)
 	{
-		if ($action == 'media-form' && rtrim($_SERVER['PHP_SELF'], '/wp-admin/async-upload.php') != $_SERVER['PHP_SELF'])
+		if ($action == 'media-form' && strrchr($_SERVER['PHP_SELF'], '/wp-admin/async-upload.php'))
 		{
 			$post_id = 0;
 			$key = $this->_options['file_data_name'];
@@ -96,7 +96,7 @@ class AsyUpload
 	 */
 	function checkAjaxRefererUpload($action)
 	{
-		if ($action == 'media-form' && rtrim($_SERVER['PHP_SELF'], '/wp-admin/async-upload.php') != $_SERVER['PHP_SELF'])
+		if ($action == 'media-form' && strrchr($_SERVER['PHP_SELF'], '/wp-admin/async-upload.php'))
 		{
 			$key = $this->_options['file_data_name'];
 			if ( ! current_user_can( 'upload_files' ) ) {
