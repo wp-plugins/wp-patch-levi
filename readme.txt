@@ -4,7 +4,7 @@ Donate link:
 Tags: upload, attachment, plupload, big file, google fonts, gravater
 Requires at least: 4.0.0
 Tested up to: 4.1.1
-Stable tag: 0.2.5
+Stable tag: 0.2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,17 +18,18 @@ http://levi.cg.am/archives/4603
 有什么问题以及意见请在这里提出来，会根据请款做出修正
 
 > 注：本人一直秉承着PHP新特性、新语法，这样可能会造成插件在一些老的PHP环境中执行错误；比如PHP 5.3，如果您执行出现错误，请您将错误提示反馈给我，我会做出调整。
+>
 > 如果你的PHP版本比PHP5.3还要低，那可能就不在我支持范围之内了，因为这样您可能连wordpress都有点难跑动，建议升级PHP环境。
 
 网站速度补丁包：
 
-* google字体：使用360开源CDN替换google CDN，对所有主题、插件、页面均可通用匹配、替换；详细见：http://levi.cg.am/archives/4609
+* google字体：使用360开源CDN替换google CDN，对所有主题、插件、页面均可通用匹配、替换；详细见：[http://levi.cg.am/archives/4609](http://levi.cg.am/archives/4609)
 * gravater头像：替换gravater头像URL为https，解决在中国地区无法查看头像图片的问题；
 
 博客附件补丁包：
 
-* 附件修复：修正wordpress文章附件统计不正确，详细见：http://levi.cg.am/archives/3849
-* 大文件上传：使用新的HTML5技术切割大文件，让wordpress能够接受上传GB级的文件，详细见：http://levi.cg.am/archives/4603
+* 附件修复：修正wordpress文章附件统计不正确，详细见：[http://levi.cg.am/wiki/wordpress-第三方补丁包/文章附件统计修复](http://levi.cg.am/wiki/wordpress-%E7%AC%AC%E4%B8%89%E6%96%B9%E8%A1%A5%E4%B8%81%E5%8C%85/%E6%96%87%E7%AB%A0%E9%99%84%E4%BB%B6%E7%BB%9F%E8%AE%A1%E4%BF%AE%E5%A4%8D)
+* 大文件上传：使用新的HTML5技术切割大文件，让wordpress能够接受上传GB级的文件，详细见：[http://levi.cg.am/archives/4603](http://levi.cg.am/archives/4603)
 
 == Screenshots ==
 
@@ -49,6 +50,12 @@ http://levi.cg.am/archives/4603
 3. 在插件管理中启动插件
 
 == Changelog ==
+
+= 0.2.7 =
+* 修正描述
+
+= 0.2.6 =
+* 重写wordpress文章附件统计，详情见；[http://levi.cg.am/wiki/wordpress-第三方补丁包/文章附件统计修复](http://levi.cg.am/wiki/wordpress-%E7%AC%AC%E4%B8%89%E6%96%B9%E8%A1%A5%E4%B8%81%E5%8C%85/%E6%96%87%E7%AB%A0%E9%99%84%E4%BB%B6%E7%BB%9F%E8%AE%A1%E4%BF%AE%E5%A4%8D)
 
 = 0.2.5 =
 * 规范文件上传路径检测；
@@ -87,6 +94,12 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.2.7 =
+* 修正描述
+
+= 0.2.6 =
+* 重写wordpress文章附件统计
 
 = 0.2.5 =
 * 修复二级目录下的博客不能上传文件的问题；
