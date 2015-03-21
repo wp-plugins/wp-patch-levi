@@ -3,7 +3,7 @@
  * Plugin Name: wordpress 补丁包
  * Plugin URI: http://levi.cg.am
  * Description: 第三方wordpress补丁包，修复wordpress漏洞、程序缺陷
- * Version: 0.2.5
+ * Version: 0.2.6
  * Network: true
  * Author: Levi
  * Author URI: http://levi.cg.am
@@ -36,8 +36,14 @@ add_filter('get_avatar', 'get_ssl_avatar');
 
 /*
  * 文章附件统计
+ * 钩子`get_attached_media_args`优先级要低，才能保证最终返回的都是空
+ * 钩子`get_attached_media`优先级要提前，避免其他钩子获取到空数据
  */
-add_action('save_post', 'save_post', 100, 2);
+$attach_media = new GetAttachedMediaLevi();
+add_action('save_post', array($attach_media, 'savePost'), 10, 3);
+add_action('after_delete_post', array($attach_media, 'savePost'));
+add_filter('get_attached_media_args', array($attach_media, 'getAttachedMediaArgs'), 9999);
+add_filter('get_attached_media', array($attach_media, 'getAttachedMedia'), 1, 3);
 
 /*
  * 文件上传
