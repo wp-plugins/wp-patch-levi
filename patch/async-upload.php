@@ -215,9 +215,11 @@ class AsyUpload
 			if (!$chunks || ($chunk == $chunks - 1)) 
 			{
 				rename($filePath.'.part', $filePath);
+				
+				$ext = wp_check_filetype_and_ext($filePath, $fileName);
 				return array(
 					'name' => $fileName, 
-					'type' => finfo_file(finfo_open(FILEINFO_MIME_TYPE), $filePath),
+					'type' => $ext['type'] ? $ext['type'] : 'text/plain',
 					'tmp_name' => $filePath,
 					'error' => 0,
 					'size' => filesize($filePath)
