@@ -3,7 +3,7 @@
  * Plugin Name: wordpress 补丁包
  * Plugin URI: http://levi.cg.am
  * Description: 第三方wordpress补丁包，修复wordpress漏洞、程序缺陷
- * Version: 0.2.8
+ * Version: 0.2.9
  * Network: true
  * Author: Levi
  * Author URI: http://levi.cg.am
@@ -14,7 +14,6 @@ include 'patch/upload-count-plug.php';
 include 'patch/Yii_bloger_upload.php';
 include 'patch/async-upload.php';
 include 'patch/network.php';
-include 'patch/thumbnail-patch.php';
 
 define('WP_UPLOAD_LEVI', true);
 

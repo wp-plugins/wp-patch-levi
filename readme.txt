@@ -4,7 +4,7 @@ Donate link:
 Tags: upload, attachment, plupload, big file, google fonts, gravater
 Requires at least: 4.0.0
 Tested up to: 4.1.1
-Stable tag: 0.2.8
+Stable tag: 0.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,9 @@ http://levi.cg.am/archives/4603
 3. 在插件管理中启动插件
 
 == Changelog ==
+
+= 0.2.9 =
+* 引用了下一个大版本的文件，版本0.2.*暂且不提供，引用后会报告文件不存在的错误。现已修复
 
 = 0.2.8 =
 * 修正大文件上传：使用wordpress自带mime检测代替PECL默认方法，兼容不支持fileinfo组件的环境
@@ -97,6 +100,9 @@ http://levi.cg.am/archives/4603
 * 新增wordpress上传大文件功能；
 
 == Upgrade Notice ==
+
+= 0.2.9 =
+* 修正引用文件不存在的错误
 
 = 0.2.8 =
 * 修正大文件上传，兼容不支持fileinfo的PHP环境
